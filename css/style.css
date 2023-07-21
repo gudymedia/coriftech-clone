@@ -18,110 +18,160 @@ body {
   width: 90%;
   height: 100%;
   margin: auto;
-  /* background-color: aqua; */
 }
 
-/* NAVIGATION MENU (header) */
-header {
-  background: #333 url(../img/showcase.jpg) no-repeat center center/cover;
-  height: 100vh;
-  background-blend-mode: overlay;
-}
 
-.nav-flex {
-  background-color: #21336482;
-  margin: 0 -30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 103%;
-  padding: 1rem 3rem;
-  position: fixed;
-  top: 0;
-  z-index: 99;
-}
-
-.line {
-  position: fixed;
-  top: 70px;
+#home {
   width: 100%;
-  border-bottom: 1px solid #ffffff23;
-  margin: 0 -47px;
+  height: 4rem;
+  background: #213364;
+  position:fixed;
 }
 
-header .nav_logo {
-  display: flex;
-  align-items: center;
-  margin-right: .8rem;
-
-}
-
-header .nav_logo img {
-  width: 40px;
+/* correction menu */
+.nav-flex {
+  width: 100%;
   height: auto;
-  cursor: pointer;
-  text-align: center;
+  padding: 0.5rem 0rem 0.5rem 0rem;
 }
 
-/* MENUS */
-header ul {
-  list-style: none;
+.nav_logo {
+  float: left;
+  width: 4rem;
+  height: 100%;
+  margin:0rem 0rem 0rem 1rem;
+}
+
+.nav_logo img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.toggle {
+  display: none;
+}
+
+.toggler {
+  float: right;
+  width: 1.8rem;
+  height: 1.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
+  margin:0.5rem 1rem 0rem 0rem;
+  transition:all 3s ;
 }
 
-.links {
-  margin-right: 0;
+.toggleLine {
+  width: 1.8rem;
+  height: 2px;
+  background: #fff;
+  position: relative;
+  transition:all .2s linear;
 }
 
-header li {
-  margin: 0 .5rem;
-  text-align: center;
+.toggleLine::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  width: 1.8rem;
+  height: 2px;
+  background: #fff;
+  transition:all .2s linear;
 }
 
-header li a {
-  text-transform: uppercase;
-  color: #fff;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: .6rem;
-  /* padding: 0 5px; */
-  transition: all ease 1s;
+.toggleLine::after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  width: 1.8rem;
+  height: 2px;
+  background: #fff;
+  transition:all .2s linear;
 }
 
-header li a:hover {
-  /* background-color: #949a9ac9; */
-  /* color: #333; */
-  border-bottom: 3px solid #0026ff;
-  background-color: #1d1dff77;
-  /* color: #213364; */
-  border-radius: 5px;
-  padding: 10px 8px;
-  transition: all ease 1s;
+.navigationItems {
+  clear:both;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  justify-content:center;
+  width:100%;
+  height:0rem;
+  overflow: hidden;
+  padding:0rem 1rem 0rem 0rem;
+  background:#252d86b7;
+  list-style-type:none;
+  transition:height .2s ease-in-out;
 }
+
+.navigationItems li a {
+  display:block;
+  color:#fff;
+  text-decoration:none;
+  margin:0.5rem 0rem 0.5rem 0rem;
+}
+
+.toggle:checked ~ .navigationItems {
+  height: 12rem;
+}
+
+.toggle:checked ~ .toggler .toggleLine {
+  background:transparent;
+}
+.toggle:checked ~ .toggler .toggleLine:before {
+  top:0px;
+  transform:rotate(-135deg)
+}
+.toggle:checked ~ .toggler .toggleLine:after {
+  top:0px;
+  transform:rotate(135deg)
+}
+
+.toggle:checked ~ .toggler {
+  transform:rotate(360deg);
+  animation:all 3s infinite ;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+
+
+
+
+/* NAVIGATION MENU (header) */
+/* header {
+  height: 100vh;
+  background-blend-mode: overlay;
+} */
+
 
 
 
 /* SHOWCASE  */
+
 .showcase {
-  height: 100%;
+  height: 70vh;
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: flex-start;
   color: #fff;
 }
-
+#showcase.container {
+  width: 100%;
+  padding: 0rem 1rem 0rem 1rem;
+  background: #333 url(../img/showcase.jpg) no-repeat center center/cover;
+  background-blend-mode: overlay;
+}
 .showcase-text {
   padding-top: 2rem;
   line-height: 1.2;
+  width: 70%;
 }
 
 .showcase-text h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
+  margin: 2.5rem 0rem 1rem;
 }
 
 .showcase-text p {
@@ -237,11 +287,13 @@ header li a:hover {
 .offers a:hover {
   border-bottom: 1px solid #fff;
 }
+
 .offers .offer {
   padding-top: .5rem;
   width: 80%;
   transition: all 1s ease-in-out;
 }
+
 .offers .offer:hover {
   background-color: #a9a8af41;
   border-radius: 10px;
@@ -296,10 +348,12 @@ header li a:hover {
   text-decoration: none;
   font-weight: bold;
 }
+
 /* MISSION */
 .mission {
   background-color: lavender;
 }
+
 .mission .row {
   display: flex;
   flex-direction: column;
@@ -309,28 +363,34 @@ header li a:hover {
   color: #213364;
   gap: 2rem;
 }
+
 .row .left {
   width: 100%;
 }
+
 .left img {
   width: 100%;
   height: auto;
   box-shadow: 0 0 3px #aeaeb9;
 }
+
 .left-text a {
   font-size: .7rem;
   color: #213364;
   text-decoration: none;
   font-weight: bold;
 }
+
 .left-text h3 {
   font-size: x-large;
-  padding: 2rem 0;
+  padding: 2rem 0 0;
 }
+
 .left-text p {
   font-size: 1rem;
-  padding: 2rem 0;
+  padding: 1.5rem 0;
 }
+
 .row .right {
   display: flex;
   flex-direction: column;
@@ -346,6 +406,7 @@ header li a:hover {
   color: #fff;
 
 }
+
 .right-text h3 {
   padding: 2rem 0;
   width: 60%;
@@ -365,41 +426,48 @@ footer .row {
   align-content: flex-start;
   justify-content: center;
 }
+
 .row .footer-text {
   width: 80%;
   margin: auto;
   transition: all 1s ease-in-out;
   padding: 2rem;
 }
+
 .row .footer-text:hover {
-  border-bottom: 2 solid #ccc;
   padding-bottom: .4rem;
   transition: all 1s ease-in-out;
-  width: 90%;
+  width: 100%;
 }
-.footer-text:last-child{
+
+.footer-text:last-child {
   margin-bottom: 1rem;
 }
 
-.footer-text h4{
+.footer-text h4 {
   font-size: 1rem;
 }
-.footer-text p{
+
+.footer-text p {
   font-size: .7rem;
 }
-.footer-text li{
+
+.footer-text li {
   list-style: none;
 }
-.footer-text li a{
+
+.footer-text li a {
   color: #cefffe;
   text-decoration: none;
   transition: all 1s ease-in-out;
   font-size: .7rem;
 }
+
 footer li a:hover {
   transition: all 1s ease-in-out;
   color: #fff;
 }
+
 .footer-text input {
   background-color: transparent;
   border: 1px solid #ccc;
@@ -410,11 +478,13 @@ footer li a:hover {
   font-size: .6rem;
   line-height: 1.5;
 }
+
 .footer-text input::placeholder {
   color: #ccc;
   font-size: .6rem;
 }
-.footer-text button{
+
+.footer-text button {
   width: 90%;
   font-weight: bold;
   font-size: .7rem;
@@ -425,375 +495,8 @@ footer li a:hover {
   margin-top: .3rem;
   transition: all 1s ease-in-out;
 }
-.footer-text button:hover{
+
+.footer-text button:hover {
   background-color: #cefffe;
   transition: all 1s ease-in-out;
-}
-
-
-
-
-
-
-
-
-/* -------------------------MEDIA QUERIES -------------------------*/
-@media (min-width: 790px) {
-
-  .nav-flex {
-    flex-direction: row;
-    margin: 0 -75px;
-    gap: 20%;
-  }
-
-  header .nav_logo img {
-    width: 60px;
-  }
-
-  header li a {
-    font-size: .7rem;
-  }
-
-  .line {
-    top: 95px;
-  }
-
-  .showcase-text {
-    width: 60%;
-  }
-
-  .showcase-text h2 {
-    font-size: 2.9rem;
-  }
-
-  .showcase-text p {
-    font-size: 1.5rem;
-  }
-
-  .links {
-    margin-right: 1rem;
-  }
-
-  .about-content {
-    flex-flow: row;
-  }
-
-  .about-content .about-text {
-    font-size: 1rem;
-    width: 70%;
-  }
-
-  .about-content .about-img img {
-    width: 350px;
-    height: auto;
-  }
-
-  .offers {
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .offers .offer {
-    padding-top: .5rem;
-    width: 30%;
-    transition: all 1s ease-in-out;
-
-  }
-
-  .offers .offer:hover {
-    background-color: #a9a8af41;
-    border-radius: 10px;
-    transition: all 1s ease-in-out;
-  }
-
-  .offers p {
-    font-size: .7rem;
-    width: 80%;
-    margin: auto;
-  }
-
-  .offers h3 {
-    font-size: 20px;
-    margin: auto;
-  }
-
-  .offers a {
-    font-size: .5rem;
-    color: #fff;
-    text-decoration: none;
-  }
-
-  .offers p {
-    font-size: 1.1rem;
-  }
-
-
-  .values {
-    display: flex;
-    flex-flow: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  .value {
-    /* background-color: #213364; */
-    flex-grow: 1;
-    width: 20%;
-    height: 100%;
-    margin: 0 .6rem;
-  }
-
-  .value h3 {
-    font-size: 2rem;
-  }
-
-  .value p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-  /* MISSION */
-
-.mission .row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 2rem 0;
-  color: #213364;
-  gap: 2rem;
-}
-.row .left {
-  width: 30%;
-}
-.left img {
-  width: 100%;
-  height: auto;
-  box-shadow: 0 0 3px #aeaeb9;
-}
-.left-text a {
-  font-size: .7rem;
-  color: #213364;
-  text-decoration: none;
-  font-weight: bold;
-}
-.left-text h3 {
-  font-size: x-large;
-  padding: 2rem 0;
-}
-.row .right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  flex-grow: 1;
-  align-self: stretch;
-  width: 60%;
-  height: auto;
-  background: #333 url(../img/pexels-pixabay-355948.jpg) no-repeat center center/cover;
-  background-blend-mode: overlay;
-  color: #fff;
-
-}
-
-/* FOOTER */
-footer {
-  background-color: #213364;
-  color: #fff;
-}
-
-footer .row {
-  display: flex;
-  flex-direction: row;
-  align-content: flex-start;
-  justify-content: center;
-}
-.row .footer-text {
-  width: 22%;
-  margin: auto;
-  transition: all 1s ease-in-out;
-  padding: 2rem;
-}
-.row .footer-text:hover {
-  border-bottom: 2 solid #ccc;
-  padding-bottom: .4rem;
-  transition: all 1s ease-in-out;
-  width: 35%;
-}
-
-.footer-text h4{
-  font-size: 1rem;
-}
-.footer-text p{
-  font-size: .7rem;
-}
-.footer-text li{
-  list-style: none;
-}
-.footer-text li a{
-  color: #cefffe;
-  text-decoration: none;
-  transition: all 1s ease-in-out;
-  font-size: .7rem;
-}
-footer li a:hover {
-  transition: all 1s ease-in-out;
-  color: #fff;
-}
-.footer-text input {
-  background-color: transparent;
-  border: 1px solid #ccc;
-  padding: 5px;
-  width: 90%;
-  outline: none;
-  color: #fff;
-  font-size: .6rem;
-  line-height: 1.5;
-}
-.footer-text input::placeholder {
-  color: #ccc;
-  font-size: .6rem;
-}
-.footer-text button{
-  width: 90%;
-  font-weight: bold;
-  font-size: .7rem;
-  color: #213364;
-  line-height: 2;
-  cursor: pointer;
-  border: none;
-  margin-top: .3rem;
-  transition: all 1s ease-in-out;
-}
-.footer-text button:hover{
-  background-color: #cefffe;
-  transition: all 1s ease-in-out;
-}
-
-}
-
-@media (min-width: 1500px) {
-  header .nav_logo img {
-    width: 60px;
-  }
-
-  .line {
-    top: 100px;
-  }
-
-  .nav-flex {
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: 0 -400px;
-    gap: 30%;
-  }
-
-  header li {
-    margin: 0 2rem;
-    text-align: center;
-  }
-
-  header li a {
-    text-transform: uppercase;
-    color: #fff;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 1.2rem;
-    /* padding: 0 5px; */
-    transition: all ease 1s;
-  }
-  .container {
-    width: 70%;
-    margin: auto;
-  }
-
-  .showcase {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-
-  .showcase-text h2 {
-    font-size: 5rem;
-  }
-
-  .showcase-text p {
-    font-size: 2rem;
-  }
-
-  .showcase-text button {
-    color: #fff;
-    background-color: #ffffff48;
-    font-size: 2rem;
-    border: none;
-    border-radius: 5px;
-    padding: 3rem 6rem;
-    font-weight: bold;
-    transition: all ease 1s;
-  }
-
-  .about-content .about-text {
-    width: 70%;
-  }
-
-  .about-content .about-img img {
-    max-width: 500px;
-    height: 500px;
-  }
-
-  .about-content .about-text h4 {
-    font-size: 2rem;
-  }
-
-  .about-content .about-text p {
-    font-size: 1rem;
-  }
-
-  .about-content .about-text a,
-  .about-content .about-text h3 {
-    font-size: 1.5rem;
-  }
-
-  .values1 .values-heading h3 {
-    font-size: 2rem;
-    padding: 3rem 0;
-  }
-
-  .values1 .values-heading p {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-
-  .value h3 {
-    font-size: 2.2rem;
-  }
-
-  .value p {
-    font-size: 1.2rem;
-  }
-
-  /* OFFERS */
-  .offers img {
-    width: 150px;
-  }
-
-  .offers p {
-    font-size: 1.5rem;
-  }
-
-  .offers h3 {
-    font-size: 2.5rem;
-    width: 90%;
-    margin: auto;
-  }
-
-  .offers a {
-    font-size: 1rem;
-    color: #fff;
-    text-decoration: none;
-  }
-
 }

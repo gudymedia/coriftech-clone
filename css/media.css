@@ -1,0 +1,134 @@
+@media(min-width: 576px) {
+  .row .footer-text{
+    width:  75%;
+  }
+  .about-content {
+    flex-direction: row;
+  }
+  .offers {
+    flex-direction: row;
+  }
+  .offers .offer {
+    width: 28%;
+    margin: 1rem .5rem;
+    align-self: flex-start;
+  }
+  .offers h3 {
+    font-size: 1.5rem;
+    line-height: 1.1;
+    padding-bottom: 1rem;
+  }
+  .offers p {
+    font-size: .8rem;
+  }
+  .values{
+    display: flex;
+    flex-direction: row;
+  }
+  .value{
+    width: 20%;
+    align-self: self-start;
+    margin: 0 .5rem;
+  }
+  .mission .row{
+    flex-direction: row;
+  }
+  
+}
+@media(min-width: 768px) {
+  #home {
+    background: #21336497;
+  }
+  .toggle{
+    display: none;
+  }
+  .toggler{
+    display: none;
+  }
+  .nav-flex{
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav_logo img{
+    padding-top: 2px;
+  }
+
+  ul.navigationItems {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content:flex-end;
+    /* margin:0rem 0rem 0rem 0rem; */
+    transition: all .2s ease-out;
+    /* padding:0rem 0rem 0rem 1rem; */
+    background-color: transparent;
+}
+ul.navigationItems li{
+  padding: 0 .5rem;
+  font-size: .8rem;
+}
+ul.navigationItems li a{
+  margin: 5px 0;
+}
+ul.navigationItems li::after{
+  content: "";
+  width: 0%;
+  height: 1px;
+  display: block;
+  background-color: #fff;
+  margin: auto;
+  transition: all 1s ease-in-out;
+}
+ul.navigationItems li:hover::after{
+  width: 100%;
+}
+
+
+  footer .row{
+    flex-direction: row;
+  }
+  .row .footer-text {
+    width: 70%;
+    margin: auto;
+    transition: all 1s ease-in-out;
+    padding: .5rem;
+  }
+  .row .footer-text:hover {
+    padding-bottom: .4rem;
+    transition: all 1s ease-in-out;
+    width: 100%;
+  }
+  .footer-text h4 {
+    font-size: .8rem;
+  }
+  .footer-text p {
+    font-size: .6rem;
+  }
+}
+
+@media(min-width: 1200px) {
+  .showcase{
+    height: 100vh;
+  }
+  .showcase-text {
+    width: 50%;
+  }
+  
+  /* .showcase-text h2 {
+    margin: 2.5rem 0rem 1rem;
+  } */
+  
+  .showcase-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  .showcase-text p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  .row .footer-text {
+    padding: 2rem;
+  }
+}
