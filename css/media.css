@@ -107,13 +107,18 @@ ul.navigationItems li:hover::after{
     font-size: .6rem;
   }
 }
-
 @media(min-width: 1200px) {
   .showcase{
     height: 100vh;
   }
   .showcase-text {
     width: 50%;
+  }
+  .row .left{
+    width: 50%;
+  }
+  .row .right{
+    height: auto;
   }
   
   /* .showcase-text h2 {
