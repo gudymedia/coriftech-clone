@@ -261,6 +261,7 @@ body {
   margin-bottom: 2rem;
   flex: 1 0 auto;
   text-align: center;
+  padding: 15px;
 }
 
 .offers img {
