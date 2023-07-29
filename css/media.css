@@ -2,8 +2,14 @@
   .row .footer-text{
     width:  75%;
   }
+  .about-us{
+    padding: 2rem 0;
+  }
   .about-content {
     flex-direction: row;
+  }
+  .about-content .about-text {
+    width: 60%;
   }
   .offers {
     flex-direction: row;
@@ -12,6 +18,7 @@
     width: 28%;
     margin: 1rem .5rem;
     align-self: flex-start;
+    padding: 10px;
   }
   .offers h3 {
     font-size: 1.5rem;

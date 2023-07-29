@@ -181,7 +181,7 @@ body {
 
 .showcase-text button {
   color: #fff;
-  background-color: #ffffff48;
+  background-color: #213364;
   font-size: .6rem;
   border: none;
   border-radius: 5px;
@@ -191,8 +191,9 @@ body {
 }
 
 .showcase-text button:hover {
-  background-color: #ffffff59;
+  background-color: #213364ab;
   transition: all ease 1s;
+  transform: scale(1.1);
 }
 
 
@@ -499,4 +500,4 @@ footer li a:hover {
 .footer-text button:hover {
   background-color: #cefffe;
   transition: all 1s ease-in-out;
-}
+}convo
